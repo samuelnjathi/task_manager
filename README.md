@@ -8,7 +8,7 @@ A simple and interactive **Task Manager App** built with **React, TypeScript, an
 
 ## 📸 Screenshots
 
-*(Insert screenshots of the app here)*
+![Task Manager screenshot](<public/task manage ss.jpg>)
 
 ## 🎯 Features
 
@@ -71,7 +71,7 @@ This project is open-source under the **MIT License**.
 ## 📞 Contact
 
 💡 **Have suggestions or found a bug?** Open an issue or connect with me on LinkedIn.  
-[Samuel Njathi](www.linkedin.com/in/samuel-njathi-0261aa23b)
+[Samuel Njathi](https://linkedin.com/in/samuel-njathi-0261aa23b)
 ---  
 Made with ❤️ by **Samuel Njathi** 🚀  
 
