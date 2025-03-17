@@ -1,54 +1,77 @@
-# React + TypeScript + Vite
+# Task Manager
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple and interactive **Task Manager App** built with **React, TypeScript, and Framer Motion**. This app allows users to **add, edit, delete, filter, and reorder tasks** using a smooth **drag-and-drop** interface.
 
-Currently, two official plugins are available:
+## 🚀 Live Demo
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+🔗 **Try it here:** [Task Manager App](https://task-manager-theta-taupe.vercel.app/)
 
-## Expanding the ESLint configuration
+## 📸 Screenshots
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+*(Insert screenshots of the app here)*
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+## 🎯 Features
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+✅ **Add, edit, delete, and filter tasks**  
+✅ **Drag-and-drop task reordering** using Framer Motion  
+✅ **Smooth animations for better UI/UX**  
+✅ **Task completion toggle (Mark as done/undone)**  
+✅ **Performance optimizations to avoid unnecessary re-renders**  
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 🛠️ Tech Stack
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+- **Frontend:** React, TypeScript, Tailwind CSS  
+- **State Management:** useState, Framer Motion's Reorder  
+- **Animations:** Framer Motion  
+- **Hosting:** Vercel  
+
+## 🏗️ Installation & Setup
+
+1. **Clone the repository**
+   ```sh
+   git clone https://github.com/samuelnjathi/task_manager.git
+   cd task_manager
+   ```
+2. **Install dependencies**
+   ```sh
+   npm install
+   ```
+3. **Run the development server**
+   ```sh
+   npm run dev
+   ```
+4. **Open the app in your browser**
+   ```
+   http://localhost:5173
+   ```
+
+## 🔧 How It Works
+
+1. **Adding a Task:** Click the "Add Task" button and enter your task name.  
+2. **Editing a Task:** Click the "Edit" button, modify the task, and save.  
+3. **Deleting a Task:** Click the "X" button to remove a task.  
+4. **Reordering Tasks:** Drag a task up or down to rearrange the list.  
+5. **Toggling Completion:** Click on a task title to mark it as completed.  
+
+## 🛠️ Future Improvements
+
+- **LocalStorage Support:** Save tasks even after page refresh.  
+- **Dark Mode:** A sleek night-friendly UI.  
+- **Task Priorities:** Assign high, medium, or low priority to tasks.  
+- **Due Dates:** Add deadlines and reminders.  
+
+## 🤝 Contributing
+
+Contributions are welcome! Feel free to fork the repo, create a branch, and submit a pull request.  
+
+## 📜 License
+
+This project is open-source under the **MIT License**.  
+
+## 📞 Contact
+
+💡 **Have suggestions or found a bug?** Open an issue or connect with me on LinkedIn.  
+[Samuel Njathi](www.linkedin.com/in/samuel-njathi-0261aa23b)
+---  
+Made with ❤️ by **Samuel Njathi** 🚀  
+
