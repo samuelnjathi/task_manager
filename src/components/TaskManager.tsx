@@ -57,8 +57,8 @@ import { Reorder } from "framer-motion";
     }, [tasks, filter])
 
 return (
-    <div className="max-w-md mx-auto p-4 bg-white shadow-md rounded-lg">
-        <h2 className="text-xl font-bold mb-4 text-center">Task Manager</h2>
+    <div className="max-w-md mx-auto p-4 bg-white bg-opacity-50 shadow-2xl rounded-lg">
+        <h2 className="text-xl font-bold mb-4 text-center">Today's Tasks</h2>
         <TaskForm onAddTask={addTask}  />
         <Filter filter={filter} setFilter={setFilter} />
         <Reorder.Group axis="y" values={tasks} onReorder={setTasks}>

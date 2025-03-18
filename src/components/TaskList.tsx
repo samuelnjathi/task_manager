@@ -6,7 +6,7 @@ import { Reorder } from "framer-motion";
 
 const TaskList: React.FC<TaskListProps> = ({tasks, onDeleteTask, onToggleTask, onEditTask}) => {
 return (
-    <ul className="mt-10">
+    <ul className="mt-5">
         <AnimatePresence>
             <Reorder.Group axis="y" values={tasks} onReorder={() => {}} className="mt-3">
             {tasks.map((task) => (

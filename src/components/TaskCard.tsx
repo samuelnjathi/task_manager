@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import ModeEditOutlinedIcon from '@mui/icons-material/ModeEditOutlined';
 import DeleteOutlinedIcon from '@mui/icons-material/DeleteOutlined';
 import { TaskItemProps } from '../types/definations';
-import AddIcon from '@mui/icons-material/Add';
 import ClearIcon from '@mui/icons-material/Clear';
+import DoneIcon from '@mui/icons-material/Done';
 import { Reorder, motion } from 'framer-motion';
 
 const TaskCard: React.FC<TaskItemProps> = ({task, onDeleteTask, onToggleTask, onEditTask}) => {
@@ -21,7 +21,7 @@ const TaskCard: React.FC<TaskItemProps> = ({task, onDeleteTask, onToggleTask, on
         <motion.li 
             layout
             key={task.id} 
-            className="flex justify-between items-center p-2 border-b my-2"
+            className="flex justify-between items-center p-2 border-b my-2 space-x-2"
             transition={{type: "spring", stiffness: 300, damping: 20}}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
@@ -47,7 +47,7 @@ const TaskCard: React.FC<TaskItemProps> = ({task, onDeleteTask, onToggleTask, on
             <div className="flex justify-end space-x-2">
                 {isEditing ? (
                     <>
-                    <AddIcon onClick={handleEdit} className='text-green-500 cursor-pointer' />
+                    <DoneIcon onClick={handleEdit} className='text-green-500 cursor-pointer' />
                     <ClearIcon className="cursor-pointer text-gray-500" onClick={() => setIsEditing(false)} />
                     </>
                 ): (

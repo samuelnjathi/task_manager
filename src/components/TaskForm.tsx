@@ -12,8 +12,8 @@ const TaskForm: React.FC<TaskFormProps> = ({ onAddTask }) => {
         setTitle("");
     }
     return (
-        <div className="flex justify-center items-center mt-10 bg-white">
-            <form onSubmit={handleSubmit}>
+        
+            <form className="flex justify-center items-center space-x-2" onSubmit={handleSubmit}>
                 <input type="text"
                         value={title}
                         onChange={(e) => setTitle(e.target.value)}
@@ -22,11 +22,11 @@ const TaskForm: React.FC<TaskFormProps> = ({ onAddTask }) => {
                         required
                 />
                 <button type="submit"
-                        className="mt-2 bg-green-500 text-white cursor-pointer rounded-full hover:bg-blue-600 p-1">
+                        className="bg-green-500 text-white cursor-pointer rounded-full hover:bg-blue-600 p-1">
                         <AddIcon />
                 </button>
             </form>
-        </div>
+        
     )
 }
 export default React.memo(TaskForm);
