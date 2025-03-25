@@ -1,10 +1,13 @@
 export type Task = {
     id: string
     title: string;
+    from: string;
+    to: string;
     completed: boolean;
 }
+
 export interface TaskFormProps {
-    onAddTask: (title: string) => void;
+    onAddTask: (task: { title: string; from: string; to: string }) => void;
 };
 
 export interface TaskListProps {

@@ -28,8 +28,8 @@ import { Reorder } from "framer-motion";
         localStorage.setItem('tasks', JSON.stringify(tasks))
     }, [tasks])
 
-    const addTask = useCallback((title: string) => {
-        setTasks((prev) =>  [...prev, {id: uuidv4(), title, completed: false}]);
+    const addTask = useCallback(({ title, from, to }: { title: string; from: string; to: string }) => {
+        setTasks((prev) =>  [...prev, {id: uuidv4(), title, from, to, completed: false}]);
     }, []);
 
     const toggleTask = useCallback((id: string) => {

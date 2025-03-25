@@ -37,11 +37,19 @@ const TaskCard: React.FC<TaskItemProps> = ({task, onDeleteTask, onToggleTask, on
                     transition={{ duration: 0.2}}
                 />
             ) : (
-                <span className={`cursor-pointer ${task.completed ? "line-through text-gray-500" : ""}`}
-                onClick={() => onToggleTask(task.id)}
-                >
-                    {task.title}
-                </span>
+                <div className="flex space-x-3 items-center">
+                    <div className="flex text-sm space-x-1">
+                        <p>{task.from}</p>
+                        <p>-</p>
+                        <p>{task.to}</p>
+                    </div>
+                    <span className={`cursor-pointer font-medium ${task.completed ? "line-through text-gray-500" : ""}`}
+                    onClick={() => onToggleTask(task.id)}
+                    >
+                        {task.title}
+                    </span>
+                </div>
+                
             )}     
         
             <div className="flex justify-end space-x-2">
