@@ -1,12 +1,12 @@
 import {  useEffect, useState } from "react";
 import Footer from "./components/Footer";
 import TaskManager from "./components/TaskManager";
-import { getImage, getQuotes } from "./services/API";
+import { getImage } from "./services/API";
+import { Analytics } from "@vercel/analytics/react"
 
 
 export default function App() {
   const [imageUrl, setImageUrl] = useState<string | null>("");
-  // const [quote, setQuote] = useState<string[]>([])
 
   const isNewDay = (lastfetchedDate: string): boolean => {
     const today = new  Date().toLocaleDateString();
@@ -36,14 +36,6 @@ export default function App() {
     fetchImage();
    }
  }, []);
-
-useEffect(() => {
-  const fetchQuotes = async () => {
-      const quotes = await getQuotes();
-      console.log(quotes);
-  }
-  fetchQuotes();
-}, [])
  
   return(
     <div className="min-h-screen flex flex-col justify-center items-center bg-center bg-cover"
@@ -53,6 +45,7 @@ useEffect(() => {
     >
       <TaskManager /> 
       <Footer />
+      <Analytics  />
     </div> 
   )
 } 

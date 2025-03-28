@@ -14,13 +14,13 @@ export interface TaskListProps {
     tasks: Task[];
     onDeleteTask: (id: string) => void;
     onToggleTask: (id: string) => void;
-    onEditTask: (id: string, newTitle: string) => void;
+    onEditTask: (id: string, newTask: {title: string; from: string; to: string}) => void;
 }
 export interface TaskItemProps {
     task: Task;
     onDeleteTask: (id: string) => void;
     onToggleTask: (id: string) => void;
-    onEditTask: (id: string, newTitle: string) => void;
+    onEditTask: (id: string, newTask: {title: string; from: string; to: string}) => void;
 }
 export interface FilterProps {
     filter: "all" | "pending" | "completed";

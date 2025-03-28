@@ -8,11 +8,23 @@ import { Reorder, motion } from 'framer-motion';
 
 const TaskCard: React.FC<TaskItemProps> = ({task, onDeleteTask, onToggleTask, onEditTask}) => {
     const [isEditing, setIsEditing] = useState<boolean>(false);
-    const [newTitle, setNewTitle] = useState<string>(task.title);
-    
+    const [newTask, setNewTask] = useState({
+        title: task.title,
+        from: task.from || "",
+        to: task.to || ""
+    });
+    const handleEditChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const { name, value } = e.target;  
+        setNewTask((prev) => {
+            return {
+               ...prev,
+               [name] : value 
+            }
+        });
+    }
     const handleEdit = () => {
-        if(!newTitle.trim()) return;
-        onEditTask(task.id, newTitle);
+        if(!newTask.title.trim()) return;
+        onEditTask(task.id, newTask);
         setIsEditing(false);
     }
 
@@ -27,15 +39,36 @@ const TaskCard: React.FC<TaskItemProps> = ({task, onDeleteTask, onToggleTask, on
             whileTap={{ scale: 0.95 }}
         >
             {isEditing ? (
-                <motion.input type="text"
-                    value={newTitle}
-                    onChange={(e) => setNewTitle(e.target.value)}
-                    className="border border-gray-500 rounded-md p-1 mr-2"
-                    autoFocus
-                    initial={{scale: 0.9}}
-                    animate={{scale: 1}} 
-                    transition={{ duration: 0.2}}
-                />
+                <motion.div 
+                autoFocus
+                initial={{scale: 0.9}}
+                animate={{scale: 1}} 
+                transition={{ duration: 0.2}}
+                >
+                    <input 
+                        name="from"
+                        value={newTask.from}
+                        onChange={handleEditChange}
+                        className="border border-gray-500 rounded-md p-0.5 m-2"
+                        aria-label="Time"
+                        type="time" 
+                    />
+                    <input 
+                        name="to"
+                        value={newTask.to}
+                        onChange={handleEditChange}
+                        className="border border-gray-500 rounded-md p-0.5"
+                        aria-label="Time" 
+                        type="time"
+                    />
+                    <input type="text"
+                        name="title"
+                        value={newTask.title}
+                        onChange={handleEditChange}
+                        className="border border-gray-500 rounded-md p-1 mr-2"
+                    />
+                </motion.div>
+                
             ) : (
                 <div className="flex space-x-3 items-center">
                     <div className="flex text-sm space-x-1">

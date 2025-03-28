@@ -40,10 +40,10 @@ import { Reorder } from "framer-motion";
         )
     }, []);
 
-    const editTask = useCallback((id: string, newTitle: string) => {
+    const editTask = useCallback((id: string, newTask: { title: string; from: string; to: string }) => {
         setTasks((prev) =>
             prev.map((task) => 
-                task.id === id ? {...task, title: newTitle }: task))
+                task.id === id ? {...task, ...newTask } : task))
     }, [])
 
     const deleteTask = useCallback((id: string) => {

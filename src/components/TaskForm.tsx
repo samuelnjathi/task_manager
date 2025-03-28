@@ -9,8 +9,8 @@ const TaskForm: React.FC<TaskFormProps> = ({ onAddTask }) => {
         to: ""
     });
     
-    const handleChange = (e: React.FormEvent) => {
-        const { name, value } = e.target as HTMLInputElement;
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const { name, value } = e.target 
         setInputTask((prev) => {
             return {
                 ...prev,
@@ -26,9 +26,7 @@ const TaskForm: React.FC<TaskFormProps> = ({ onAddTask }) => {
             to: ""
         });
     }
-    return (
-        
-            
+    return ( 
             <form className="flex flex-col  justify-center " onSubmit={handleSubmit}>
                 <div className="flex space-x-3">
                     <input type="text"
@@ -39,7 +37,6 @@ const TaskForm: React.FC<TaskFormProps> = ({ onAddTask }) => {
                             placeholder="Enter Task ..."
                             required
                     />
-                   
                 </div>
                 <div className="grid grid-cols-2 gap-4 mt-2">
                     <div>
@@ -68,7 +65,6 @@ const TaskForm: React.FC<TaskFormProps> = ({ onAddTask }) => {
                     Add Task 
                 </button>
             </form>
-   
     )
 }
 export default React.memo(TaskForm);

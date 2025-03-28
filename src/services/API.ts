@@ -16,9 +16,9 @@ export const getImage = async () => {
     }
 }
 
-export const getQuotes = async  () => {
+export const getQuote = async  () => {
     try {
-        const response = await axios.get("https://zenquotes.io/api/today");
+        const response = await axios.get("https://api.realinspire.live/v1/quotes/random");
         return response.data;
     } catch (error) {
         console.error("Error fetching Quote", error);
