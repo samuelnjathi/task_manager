@@ -6,6 +6,7 @@ import Filter from "./Filter";
 import TaskList from "./TaskList";
 import { Reorder } from "framer-motion";
 
+const weekday = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
 
  const TaskManager: React.FC = () => {
     const [tasks, setTasks] = useState<Task[]>(() => {
@@ -58,7 +59,7 @@ import { Reorder } from "framer-motion";
 
 return (
     <div className="max-w-md mx-auto p-4 bg-white bg-opacity-50 shadow-2xl rounded-lg">
-        <h2 className="text-xl font-bold mb-4 text-center">Today's Tasks</h2>
+        <h2 className="text-xl font-bold mb-4 text-center">{weekday[new Date().getDay()]}'s Tasks</h2>
         <TaskForm onAddTask={addTask}  />
         <Filter filter={filter} setFilter={setFilter} />
         <Reorder.Group axis="y" values={tasks} onReorder={setTasks}>
