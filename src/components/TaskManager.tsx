@@ -58,8 +58,8 @@ const weekday = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Sa
     }, [tasks, filter])
 
 return (
-    <div className="max-w-md mx-auto p-4 bg-white bg-opacity-50 shadow-2xl rounded-lg">
-        <h2 className="text-xl font-bold mb-4 text-center">{weekday[new Date().getDay()]}'s Tasks</h2>
+    <div className="max-w-md mx-auto p-4 bg-white bg-opacity-50 shadow-2xl rounded-lg my-12">
+        <h2 className="text-xl font-bold mb-4 text-center">{weekday[new Date().getDay()]}'s  Schedule</h2>
         <TaskForm onAddTask={addTask}  />
         <Filter filter={filter} setFilter={setFilter} />
         <Reorder.Group axis="y" values={tasks} onReorder={setTasks}>

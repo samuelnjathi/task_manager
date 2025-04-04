@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { getQuote } from '../services/API';
+import { motion } from 'framer-motion';
 
 const Footer: React.FC = () => {
     const [quote, setQuote] = useState<{content: string; author: string}[]>([]);
@@ -39,11 +40,18 @@ const Footer: React.FC = () => {
           
         }, []);
     return (
-        <footer className="flex flex-col justify-center items-center fixed bottom-0 text-white my-2">
+        <footer className="flex flex-col justify-center items-center bottom-0 text-white my-2">
             {quote.map((q, index) => (
-                <div className="flex flex-col items-center" key={index}>
-                    <p className="mb-1" onMouseOver={() => setIsHovered(true)} onMouseOut={() => setIsHovered(false)}>"{q.content}"</p>
-                    {isHovered && (<p className="text-sm text-gray-300">{q.author}</p>)}
+                <div className="flex flex-col items-center" key={index} onMouseOver={() => setIsHovered(true)} onMouseOut={() => setIsHovered(false)}>
+                    <p className="mb-1">"{q.content}"</p>
+                    {isHovered && (
+                        <motion.p className="text-sm text-gray-100"
+                            initial={{ opacity: 0, y: -10 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            exit={{ opacity: 0, y: -10 }}
+                            transition={{ duration: 0.5 }}>
+                            {q.author}
+                        </motion.p>)}
                     
                 </div>
             ))}
