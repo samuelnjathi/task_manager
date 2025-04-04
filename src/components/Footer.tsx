@@ -40,7 +40,7 @@ const Footer: React.FC = () => {
           
         }, []);
     return (
-        <footer className="flex flex-col justify-end items-center mt-auto  text-white my-2">
+        <footer className="flex flex-col justify-end items-center mt-auto text-white my-2">
             {quote.map((q, index) => (
                 <div className="flex flex-col items-center" key={index} onMouseOver={() => setIsHovered(true)} onMouseOut={() => setIsHovered(false)}>
                     <p className="mb-1">"{q.content}"</p>
