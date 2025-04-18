@@ -26,7 +26,6 @@ const weekday = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Sa
         } catch (error) {
             console.error("Error writing tasks to local storage")
         }
-        localStorage.setItem('tasks', JSON.stringify(tasks))
     }, [tasks])
 
     const addTask = useCallback(({ title, from, to }: { title: string; from: string; to: string }) => {
